@@ -137,21 +137,26 @@ def run_interactive(model: str | None = None) -> None:
         messages.append(HumanMessage(content=user_input))
 
         try:
-            with console.status("[oaa.accent]Thinking...", spinner="dots"):
-                result = agent.invoke({"messages": messages})
+            for chunk in agent.stream({"messages": messages}, stream_mode="updates"):
+                for node, updates in chunk.items():
+                    if node == "agent":
+                        msg = updates["messages"][-1]
+                        if hasattr(msg, "tool_calls") and msg.tool_calls:
+                            for tc in msg.tool_calls:
+                                print_tool_call(console, tc["name"], tc["args"])
+                        elif hasattr(msg, "content") and msg.content:
+                            print_agent_message(console, msg.content)
+                    elif node == "tools":
+                        for msg in updates["messages"]:
+                            result_preview = msg.content[:200] if msg.content else ""
+                            if result_preview:
+                                console.print(
+                                    f"  [oaa.dim]↳ {result_preview}[/]"
+                                )
 
-            # Process result messages
-            for msg in result["messages"]:
-                if hasattr(msg, "tool_calls") and msg.tool_calls:
-                    for tc in msg.tool_calls:
-                        print_tool_call(console, tc["name"], tc["args"])
-
-                if hasattr(msg, "content") and msg.content and msg.type == "ai":
-                    if not (hasattr(msg, "tool_calls") and msg.tool_calls):
-                        print_agent_message(console, msg.content)
-
-            # Update messages for next turn
-            messages = result["messages"]
+            # Update messages from the final state
+            state = agent.get_state({"configurable": {}})
+            messages = list(state.values.get("messages", messages))
 
         except KeyboardInterrupt:
             console.print("\n[oaa.dim]Interrupted.[/]")
