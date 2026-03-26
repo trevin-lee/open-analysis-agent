@@ -12,7 +12,7 @@ if env_file.exists():
             key, val = line.split("=", 1)
             os.environ.setdefault(key.strip(), val.strip())
 
-from src.agent import create_cms_agent
+from src.agent import create_cms_agent  # noqa: E402
 
 agent = create_cms_agent()
 
