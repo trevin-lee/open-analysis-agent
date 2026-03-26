@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "OpenAnalysisAgent"
+abstract: "An open-source agentic research framework for CMS physics analysis."
+authors:
+  - family-names: "Lee"
+    given-names: "Trevin"
+version: 1.0.0
+date-released: 2026-03-26
+license: MIT
+repository-code: "https://github.com/trevin-lee/OpenAnalysisAgent"
+keywords:
+  - high-energy-physics
+  - CMS
+  - particle-physics
+  - AI-agent
+  - deep-agents
+  - ROOT
+  - pyhf
+  - LHC
