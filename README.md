@@ -53,37 +53,37 @@ The typical CMS analysis workflow involves coordinating dozens of tools — upro
 OpenAnalysisAgent is built on the [LangChain Deep Agents](https://github.com/langchain-ai/deepagents) framework, which provides four core primitives:
 
 ```
-┌─────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────┐
 │                 OpenAnalysisAgent                │
-├─────────────────────────────────────────────────┤
-│                                                 │
-│   Planning Tool         Subagent Spawning       │
-│   ─ Decomposes          ─ Delegates tasks       │
+├──────────────────────────────────────────────────┤
+│                                                  │
+│   Planning Tool         Subagent Spawning        │
+│   ─ Decomposes          ─ Delegates tasks        │
 │     analysis tasks        to isolated            │
 │     into subtasks         subagents              │
-│                                                 │
+│                                                  │
 │   Filesystem Context    System Prompt            │
-│   ─ Reads/writes        ─ CMS-specific          │
+│   ─ Reads/writes        ─ CMS-specific           │
 │     intermediate          domain knowledge       │
 │     results               and constraints        │
-│                                                 │
-├─────────────────────────────────────────────────┤
+│                                                  │
+├──────────────────────────────────────────────────┤
 │              CMS Tool Suite                      │
-│                                                 │
+│                                                  │
 │   Data I/O    │  Literature  │  Analysis         │
 │   ─ ROOT      │  ─ INSPIRE   │  ─ Event sel.     │
 │   ─ NanoAOD   │  ─ arXiv     │  ─ Kinematics     │
-│   ─ LHE/HepMC │  ─ HEPData  │  ─ Histograms     │
-│   ─ DAS query │  ─ PDG       │  ─ Jet clustering  │
-│               │              │                    │
-│   Stats       │  Simulation  │  Visualization     │
-│   ─ pyhf      │  ─ MadGraph  │  ─ mplhep          │
-│   ─ cabinetry │  ─ Pythia    │  ─ Ratio panels    │
-│   ─ CLs/sig.  │  ─ CMSSW     │  ─ Brazil bands    │
-│               │  ─ Delphes   │                    │
-├─────────────────────────────────────────────────┤
+│   ─ LHE/HepMC │  ─ HEPData  │  ─ Histograms      │
+│   ─ DAS query │  ─ PDG       │  ─ Jet clustering │
+│               │              │                   │
+│   Stats       │  Simulation  │  Visualization    │
+│   ─ pyhf      │  ─ MadGraph  │  ─ mplhep         │
+│   ─ cabinetry │  ─ Pythia    │  ─ Ratio panels   │
+│   ─ CLs/sig.  │  ─ CMSSW     │  ─ Brazil band    │
+│               │  ─ Delphes   │                   │
+├──────────────────────────────────────────────────┤
 │   LangChain Deep Agents  │  LangGraph Runtime    │
-└─────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────┘
 ```
 
 ### Tool Categories
