@@ -150,9 +150,7 @@ def run_interactive(model: str | None = None) -> None:
                         for msg in updates["messages"]:
                             result_preview = msg.content[:200] if msg.content else ""
                             if result_preview:
-                                console.print(
-                                    f"  [oaa.dim]↳ {result_preview}[/]"
-                                )
+                                console.print(f"  [oaa.dim]↳ {result_preview}[/]")
 
             # Update messages from the final state
             state = agent.get_state({"configurable": {}})
