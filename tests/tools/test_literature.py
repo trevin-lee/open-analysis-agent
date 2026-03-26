@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from openanalysisagent.tools.literature import (
+from src.tools.literature import (
     lookup_particle,
     search_inspire,
 )

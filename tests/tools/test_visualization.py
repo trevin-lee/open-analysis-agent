@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from openanalysisagent.tools.visualization import (
+from src.tools.visualization import (
     plot_brazil_band,
     plot_distribution,
     plot_pull,

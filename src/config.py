@@ -60,11 +60,11 @@ def load_config(path: str | Path | None = None) -> OAAConfig:
     Search order:
     1. Explicit path argument
     2. OAA_CONFIG env var
-    3. ./openanalysisagent.yml
+    3. ./oaa.yml
     4. Defaults
     """
     if path is None:
-        path = os.environ.get("OAA_CONFIG", "openanalysisagent.yml")
+        path = os.environ.get("OAA_CONFIG", "oaa.yml")
 
     config = OAAConfig()
     config_path = Path(path)

@@ -12,7 +12,7 @@ if env_file.exists():
             key, val = line.split("=", 1)
             os.environ.setdefault(key.strip(), val.strip())
 
-from openanalysisagent.agent import create_cms_agent
+from src.agent import create_cms_agent
 
 agent = create_cms_agent()
 

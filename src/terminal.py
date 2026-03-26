@@ -13,7 +13,7 @@ from rich.panel import Panel
 from rich.text import Text
 from rich.theme import Theme
 
-from openanalysisagent import __version__
+from src import __version__
 
 # CMS-inspired color theme
 OAA_THEME = Theme(
@@ -89,8 +89,8 @@ def run_interactive(model: str | None = None) -> None:
     """Run the interactive terminal agent session."""
     from langchain_core.messages import HumanMessage
 
-    from openanalysisagent.config import load_config
-    from openanalysisagent.environment import detect_environment
+    from src.config import load_config
+    from src.environment import detect_environment
 
     console = Console(theme=OAA_THEME)
 
@@ -105,7 +105,7 @@ def run_interactive(model: str | None = None) -> None:
 
     # Create agent
     try:
-        from openanalysisagent.agent import create_cms_agent
+        from src.agent import create_cms_agent
 
         agent = create_cms_agent(model=resolved_model, config=config)
     except Exception as e:

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from openanalysisagent.tools.cmssw import (
+from src.tools.cmssw import (
     generate_cmsrun_config,
     query_global_tag,
     setup_cmssw,

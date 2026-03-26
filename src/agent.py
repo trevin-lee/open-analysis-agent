@@ -8,13 +8,13 @@ from langchain_core.messages import SystemMessage
 from langchain_core.tools import BaseTool
 from langgraph.prebuilt import create_react_agent
 
-from openanalysisagent.config import OAAConfig, load_config
-from openanalysisagent.environment import (
+from src.config import OAAConfig, load_config
+from src.environment import (
     detect_environment,
     get_unavailable_tools_message,
 )
-from openanalysisagent.system_prompt import build_system_prompt
-from openanalysisagent.tools import get_all_tools
+from src.system_prompt import build_system_prompt
+from src.tools import get_all_tools
 
 
 def create_cms_agent(

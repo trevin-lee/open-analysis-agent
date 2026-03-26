@@ -52,7 +52,7 @@ jobs:
       - name: Build package
         run: python -m build
       - name: Verify wheel
-        run: pip install dist/*.whl && python -c "import openanalysisagent; print(openanalysisagent.__version__)"
+        run: pip install dist/*.whl && python -c "import src; print(src.__version__)"
 
   docker:
     runs-on: ubuntu-latest
@@ -60,6 +60,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build Docker image
-        run: docker build -t openanalysisagent:test .
+        run: docker build -t oaa:test .
       - name: Verify container
-        run: docker run --rm openanalysisagent:test python -c "import openanalysisagent; print(openanalysisagent.__version__)"
+        run: docker run --rm oaa:test python -c "import src; print(src.__version__)"

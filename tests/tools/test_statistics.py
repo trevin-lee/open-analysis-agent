@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from openanalysisagent.tools.statistics import (
+from src.tools.statistics import (
     build_pyhf_model,
     run_cls_limit,
     run_discovery_test,

@@ -70,12 +70,15 @@ dev = [
 ]
 
 [project.scripts]
-oaa = "openanalysisagent.terminal:main"
+oaa = "src.terminal:main"
 
 [project.urls]
 Homepage = "https://github.com/trevin-lee/OpenAnalysisAgent"
 Repository = "https://github.com/trevin-lee/OpenAnalysisAgent"
 Issues = "https://github.com/trevin-lee/OpenAnalysisAgent/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
 
 [tool.ruff]
 target-version = "py310"

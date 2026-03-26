@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import tempfile
 
-from openanalysisagent.config import OAAConfig, load_config
-from openanalysisagent.environment import detect_environment, get_available_tool_categories
+from src.config import OAAConfig, load_config
+from src.environment import detect_environment, get_available_tool_categories
 
 
 def test_default_config():

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from openanalysisagent.agent import create_cms_agent
+from src.agent import create_cms_agent
 
 
 def create_graph():
@@ -11,6 +11,6 @@ def create_graph():
 
 
 if __name__ == "__main__":
-    from openanalysisagent.terminal import main
+    from src.terminal import main
 
     main()

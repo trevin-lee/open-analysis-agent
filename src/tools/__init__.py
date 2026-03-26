@@ -6,13 +6,13 @@ from typing import Any
 
 from langchain_core.tools import BaseTool
 
-from openanalysisagent.tools.analysis import (
+from src.tools.analysis import (
     apply_event_selection,
     compute_delta_r,
     compute_invariant_mass,
     fill_histogram,
 )
-from openanalysisagent.tools.data_io import (
+from src.tools.data_io import (
     convert_format,
     describe_image,
     list_root_contents,
@@ -21,7 +21,7 @@ from openanalysisagent.tools.data_io import (
     read_pdf,
     read_root_branches,
 )
-from openanalysisagent.tools.literature import (
+from src.tools.literature import (
     get_bibtex,
     lookup_particle,
     query_hepdata,
@@ -29,14 +29,14 @@ from openanalysisagent.tools.literature import (
     search_inspire,
     web_search,
 )
-from openanalysisagent.tools.statistics import (
+from src.tools.statistics import (
     build_cabinetry_workspace,
     build_pyhf_model,
     run_cls_limit,
     run_discovery_test,
     run_fit,
 )
-from openanalysisagent.tools.visualization import (
+from src.tools.visualization import (
     plot_brazil_band,
     plot_distribution,
     plot_pull,
@@ -77,7 +77,7 @@ def get_all_tools(env: dict[str, Any] | None = None) -> list[BaseTool]:
     tools = list(LIGHTWEIGHT_TOOLS)
 
     if env and env.get("mode") == "full":
-        from openanalysisagent.tools.cmssw import (
+        from src.tools.cmssw import (
             generate_cmsrun_config,
             query_global_tag,
             run_cmsrun,

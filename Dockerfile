@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Install package
 COPY pyproject.toml README.md LICENSE ./
-COPY openanalysisagent/ openanalysisagent/
+COPY src/ src/
 RUN pip install --no-cache-dir -e ".[full]"
 
 # Set version label
@@ -29,4 +29,4 @@ ENV OAA_VERSION=${VERSION}
 RUN mkdir -p /workspace/data /workspace/output /workspace/artifacts
 WORKDIR /workspace
 
-ENTRYPOINT ["python", "-m", "openanalysisagent.terminal"]
+ENTRYPOINT ["python", "-m", "src.terminal"]

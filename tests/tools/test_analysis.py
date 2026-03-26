@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from openanalysisagent.tools.analysis import (
+from src.tools.analysis import (
     apply_event_selection,
     compute_delta_r,
     compute_invariant_mass,
