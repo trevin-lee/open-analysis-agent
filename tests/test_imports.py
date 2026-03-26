@@ -6,7 +6,7 @@ from __future__ import annotations
 def test_import_package():
     import src
 
-    assert src.__version__ == "1.0.0"
+    assert src.__version__ == "0.1.0"
 
 
 def test_import_create_cms_agent():

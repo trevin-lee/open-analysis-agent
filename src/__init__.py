@@ -1,6 +1,6 @@
 """OpenAnalysisAgent — an agentic research framework for CMS physics analysis."""
 
-__version__ = "1.0.0"
+__version__ = "0.1.0"
 
 from src.agent import create_cms_agent
 

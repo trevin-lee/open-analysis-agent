@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "openanalysisagent"
-version = "1.0.0"
+version = "0.1.0"
 description = "An open-source agentic research framework for CMS physics analysis"
 readme = "README.md"
 license = "MIT"
