@@ -1,0 +1,98 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openanalysisagent"
+version = "1.0.0"
+description = "An open-source agentic research framework for CMS physics analysis"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Trevin Lee" },
+]
+keywords = [
+    "high-energy-physics",
+    "CMS",
+    "particle-physics",
+    "AI-agent",
+    "LHC",
+    "ROOT",
+    "pyhf",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "langgraph>=0.4.0",
+    "langchain-core>=0.3.0",
+    "langchain-anthropic>=0.3.0",
+    "langchain-openai>=0.3.0",
+    "langchain>=0.3.0",
+    "uproot>=5.0",
+    "awkward>=2.0",
+    "numpy>=1.24",
+    "hist>=2.7",
+    "pyhf>=0.7",
+    "cabinetry>=0.6",
+    "mplhep>=0.3",
+    "matplotlib>=3.7",
+    "particle>=0.23",
+    "hepunits>=2.3",
+    "httpx>=0.27",
+    "pymupdf>=1.24",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "prompt-toolkit>=3.0",
+    "pydantic>=2.0",
+    "vector>=1.0",
+]
+
+[project.optional-dependencies]
+full = [
+    "jupyter>=1.0",
+    "ipykernel>=6.0",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.8",
+    "mypy>=1.10",
+    "pre-commit>=3.0",
+]
+
+[project.scripts]
+oaa = "openanalysisagent.terminal:main"
+
+[project.urls]
+Homepage = "https://github.com/trevin-lee/OpenAnalysisAgent"
+Repository = "https://github.com/trevin-lee/OpenAnalysisAgent"
+Issues = "https://github.com/trevin-lee/OpenAnalysisAgent/issues"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: marks tests requiring Docker + CVMFS",
+    "slow: marks slow simulation tests",
+]
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
