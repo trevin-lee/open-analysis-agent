@@ -8,7 +8,13 @@ if [ -f "$PROXY" ]; then
     if voms-proxy-info -file "$PROXY" -exists 2>/dev/null; then
         echo "✓ Valid VOMS proxy found at $PROXY"
         export X509_USER_PROXY="$PROXY"
-        exec python -m src.terminal "$@"
+        # If arguments are passed (e.g., "python -c ..."), run them directly;
+# otherwise start the interactive terminal.
+if [ $# -gt 0 ]; then
+    exec "$@"
+else
+    exec python -m src.terminal
+fi
     fi
     echo "⚠ Proxy at $PROXY has expired"
 fi
@@ -29,4 +35,10 @@ else
     echo "  Mount ~/.globus/ to enable DAS and xrootd"
 fi
 
-exec python -m src.terminal "$@"
+# If arguments are passed (e.g., "python -c ..."), run them directly;
+# otherwise start the interactive terminal.
+if [ $# -gt 0 ]; then
+    exec "$@"
+else
+    exec python -m src.terminal
+fi
