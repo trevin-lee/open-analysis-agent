@@ -115,10 +115,14 @@ def run_interactive(model: str | None = None) -> None:
 
     messages: list = []
 
+    from prompt_toolkit import PromptSession
+    from prompt_toolkit.formatted_text import HTML
+
+    session = PromptSession()
+
     while True:
         try:
-            console.print("[oaa.user]You ▶[/] ", end="")
-            user_input = input().strip()
+            user_input = session.prompt(HTML("<ansigreen>You ▶ </ansigreen>")).strip()
         except (EOFError, KeyboardInterrupt):
             console.print("\n[oaa.dim]Session ended.[/]")
             break
