@@ -7,6 +7,8 @@ Built on LangChain Deep Agents with tools for ROOT I/O, INSPIRE-HEP, pyhf, CMSSW
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
+![Open Analysis Agent terminal interface](image.png)
+
 ---
 
 ## Table of Contents
