@@ -1,0 +1,61 @@
+services:
+  cvmfs:
+    image: cvmfs/service:2.12.0-1
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    environment:
+      - CVMFS_CLIENT_PROFILE=single
+      - CVMFS_REPOSITORIES=cms.cern.ch,sft.cern.ch
+      - CVMFS_HTTP_PROXY=DIRECT
+    volumes:
+      - cvmfs:/cvmfs:shared
+
+  agent:
+    build:
+      context: .
+      args:
+        VERSION: ${OAA_VERSION:-dev}
+    image: ghcr.io/trevin-lee/openanalysisagent:latest
+    depends_on:
+      - cvmfs
+    volumes:
+      - cvmfs:/cvmfs:ro
+      - ./workspace:/workspace
+      - ${HOME}/.globus:/root/.globus:ro
+      # Mount your VOMS proxy: X509_USER_PROXY=/tmp/x509up_u501 docker compose up agent
+      # - ${X509_USER_PROXY}:/tmp/x509up_u0:ro
+    env_file:
+      - .env
+    ports:
+      - "8888:8888"
+      - "2024:2024"
+    stdin_open: true
+    tty: true
+
+  # Standalone mode (no CVMFS, lightweight tools only)
+  agent-standalone:
+    build:
+      context: .
+      args:
+        VERSION: ${OAA_VERSION:-dev}
+    image: ghcr.io/trevin-lee/openanalysisagent:latest
+    volumes:
+      - ./workspace:/workspace
+      - ${HOME}/.globus:/root/.globus:ro
+      # Mount your VOMS proxy: X509_USER_PROXY=/tmp/x509up_u501 docker compose up --profile standalone agent-standalone
+      # - ${X509_USER_PROXY}:/tmp/x509up_u0:ro
+    env_file:
+      - .env
+    ports:
+      - "8888:8888"
+      - "2024:2024"
+    stdin_open: true
+    tty: true
+    profiles:
+      - standalone
+
+volumes:
+  cvmfs:
+    driver: local
