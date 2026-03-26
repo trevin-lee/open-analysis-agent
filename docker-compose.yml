@@ -17,7 +17,7 @@ services:
       context: .
       args:
         VERSION: ${OAA_VERSION:-dev}
-    image: ghcr.io/trevin-lee/openanalysisagent:latest
+    image: ghcr.io/trevin-lee/open-analysis-agent:latest
     depends_on:
       - cvmfs
     volumes:
@@ -40,7 +40,7 @@ services:
       context: .
       args:
         VERSION: ${OAA_VERSION:-dev}
-    image: ghcr.io/trevin-lee/openanalysisagent:latest
+    image: ghcr.io/trevin-lee/open-analysis-agent:latest
     volumes:
       - ./workspace:/workspace
       - ${HOME}/.globus:/root/.globus:ro

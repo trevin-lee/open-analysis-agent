@@ -118,7 +118,7 @@ This gives you:
 For the complete environment including MadGraph, Pythia, ROOT, Delphes, and CMSSW:
 
 ```bash
-git clone https://github.com/trevin-lee/OpenAnalysisAgent.git
+git clone https://github.com/trevin-lee/open-analysis-agent.git
 cd OpenAnalysisAgent
 docker compose up
 ```
@@ -857,7 +857,7 @@ Contributions are welcome. Please read the following guidelines before submittin
 ### Development Setup
 
 ```bash
-git clone https://github.com/trevin-lee/OpenAnalysisAgent.git
+git clone https://github.com/trevin-lee/open-analysis-agent.git
 cd OpenAnalysisAgent
 pip install -e ".[dev]"
 ```
@@ -905,7 +905,7 @@ If you use OpenAnalysisAgent in your research, please cite:
   year         = {2026},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.XXXXXXX},
-  url          = {https://github.com/trevin-lee/OpenAnalysisAgent}
+  url          = {https://github.com/trevin-lee/open-analysis-agent}
 }
 ```
 
@@ -924,7 +924,7 @@ version: 0.1.0
 doi: 10.5281/zenodo.XXXXXXX
 date-released: 2026-01-01
 license: MIT
-repository-code: "https://github.com/trevin-lee/OpenAnalysisAgent"
+repository-code: "https://github.com/trevin-lee/open-analysis-agent"
 keywords:
   - high-energy-physics
   - CMS

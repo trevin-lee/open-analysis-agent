@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir -e ".[full]"
 LABEL org.opencontainers.image.title="Open Analysis Agent" \
       org.opencontainers.image.description="AI-powered research assistant for CMS experiment data analysis at the LHC" \
       org.opencontainers.image.version="${VERSION}" \
-      org.opencontainers.image.source="https://github.com/trevin-lee/OpenAnalysisAgent" \
+      org.opencontainers.image.source="https://github.com/trevin-lee/open-analysis-agent" \
       org.opencontainers.image.licenses="MIT"
 
 ENV OAA_VERSION=${VERSION}

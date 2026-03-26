@@ -73,9 +73,9 @@ dev = [
 oaa = "src.terminal:main"
 
 [project.urls]
-Homepage = "https://github.com/trevin-lee/OpenAnalysisAgent"
-Repository = "https://github.com/trevin-lee/OpenAnalysisAgent"
-Issues = "https://github.com/trevin-lee/OpenAnalysisAgent/issues"
+Homepage = "https://github.com/trevin-lee/open-analysis-agent"
+Repository = "https://github.com/trevin-lee/open-analysis-agent"
+Issues = "https://github.com/trevin-lee/open-analysis-agent/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]

@@ -5,10 +5,10 @@ abstract: "An open-source agentic research framework for CMS physics analysis."
 authors:
   - family-names: "Lee"
     given-names: "Trevin"
-version: 1.0.0
+version: 0.1.0
 date-released: 2026-03-26
 license: MIT
-repository-code: "https://github.com/trevin-lee/OpenAnalysisAgent"
+repository-code: "https://github.com/trevin-lee/open-analysis-agent"
 keywords:
   - high-energy-physics
   - CMS
