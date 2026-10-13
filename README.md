@@ -5,7 +5,6 @@
 Built on LangChain Deep Agents with tools for ROOT I/O, INSPIRE-HEP, pyhf, CMSSW, and end-to-end collider workflows. Pip-installable core, with full MadGraph/Pythia/ROOT via Docker + CVMFS.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
 ![Open Analysis Agent terminal interface](image.png)
 
@@ -905,8 +904,6 @@ If you use OpenAnalysisAgent in your research, please cite:
   author       = {Trevin Lee},
   title        = {{OpenAnalysisAgent: An Agentic Research Framework for CMS Physics Analysis}},
   year         = {2026},
-  publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.XXXXXXX},
   url          = {https://github.com/trevin-lee/open-analysis-agent}
 }
 ```
@@ -921,10 +918,9 @@ abstract: "An open-source agentic research framework for CMS physics analysis."
 authors:
   - family-names: "Lee"
     given-names: "Trevin"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
+    orcid: "https://orcid.org/0009-0009-3773-9910"
 version: 0.1.0
-doi: 10.5281/zenodo.XXXXXXX
-date-released: 2026-01-01
+date-released: 2026-03-26
 license: MIT
 repository-code: "https://github.com/trevin-lee/open-analysis-agent"
 keywords:
